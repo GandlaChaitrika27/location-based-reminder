@@ -132,11 +132,11 @@ input[type="submit"]:hover {
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
 
-            axios.post('http://localhost:5000/api/user/login', { email, password })
+            axios.post('https://location-based-reminder-1.onrender.com/api/user/login', { email, password })
                 .then(response => {
                     if (response.data.success) {
                         localStorage.setItem('token', response.data.token);
-                        window.location.href = 'http://127.0.0.1:5500/backend/task.html'; // Redirect to task manager page
+                        window.location.href = 'task.html'; // Redirect to task manager page
                     } else {
                         alert(response.data.message);
                     }
@@ -150,7 +150,7 @@ input[type="submit"]:hover {
             const email = document.getElementById('signupEmail').value;
             const password = document.getElementById('signupPassword').value;
 
-            axios.post('http://localhost:5000/api/user/register', { name, email, password })
+            axios.post('https://location-based-reminder-1.onrender.com/api/user/register', { name, email, password })
                 .then(response => {
                     if (response.data.success) {
                         alert('Signed up successfully!');
